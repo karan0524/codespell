@@ -18,6 +18,10 @@ module.exports = {
         '2xl': '1250px',
       },
 
+      backgroundImage: {
+        'home-radial': 'radial-gradient(circle farthest-side at 0% 0%, #173030, var(--codespell-background))',
+      },
+
       fontSize: {
         '34':"34px",
         '32':"32px",

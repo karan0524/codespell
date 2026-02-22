@@ -97,18 +97,29 @@
 
   .primaryBtn {
     @apply border rounded-[30px] flex justify-center items-center
-    w-[127px] lg:w-[143px]
-    h-8 lg:h-[35px] max-h-[44px]
-           bg-secondary;
-
+      w-[127px] lg:w-[143px]
+      h-8 lg:h-[35px] max-h-[44px]
+      bg-secondary
+      transition-all duration-300 ease-in-out;
+  
     border-color: #00bcbc;
-
+  
     background-image: radial-gradient(
       circle closest-corner at 50% -367%,
       #00bcbc,
       #00bcbc 69%,
       #040303
     );
+  }
+  
+  /* ✨ Hover Glow */
+  .primaryBtn:hover {
+    box-shadow:
+      0 0 8px rgba(0, 188, 188, 0.6),
+      0 0 18px rgba(0, 188, 188, 0.4),
+      0 0 30px rgba(0, 188, 188, 0.25);
+  
+    transform: translateY(-2px);
   }
 
   .glassShade {
@@ -122,6 +133,42 @@
       #00bcbc 69%,
       #040303
     );
+  }
+
+  .image-wrapper {
+    @apply border-[5px] border-[#141414] rounded-xl pt-9 pl-5 w-auto h-auto
+    xl:bg-home-radial
+    xl:border-[5px] xl:border-[#141414]
+    xl:rounded-xl
+    xl:flex xl:justify-center xl:items-center
+    xl:w-[576.5px]
+    xl:h-[485px]
+    xl:pt-9 xl:pl-5 xl:pb-0;
+  }
+
+  .tileBlock {
+    @apply bg-[#00bcbc]/[.2] rounded-md px-2 py-3 text-center text-base lg:text-lg font-normal leading-normal text-primary;
+  }
+
+  .subtileBlock {
+    @apply bg-[#fff]/[.12] rounded-md p-3 text-left text-base lg:text-lg font-normal leading-normal text-shade100;
+  }
+
+  .footerMenutitle{
+    @apply text-shade100 text-lg lg:text-2xl font-medium leading-lessTighter relative pb-2 mb-3 lg:mb-5
+  }
+
+  .footerMenutitle::after {
+    content: "";
+    @apply absolute left-0 bottom-0 w-11 h-1 bg-[#f8d357] rounded-2xl;
+  }
+
+  .footerMenuLinks{
+    @apply font-normal leading-normal text-sm text-shade100 lg:text-base hover:text-[#f8d357] transition-all pb-3 table
+  }
+
+  .postFooterLinks{
+    @apply font-normal leading-normal text-base text-shade100 lg:text-lg hover:text-[#f8d357] transition-all  table
   }
 }
 
@@ -145,10 +192,41 @@ html {
   padding-bottom: 90px;
 }
 
+.caseStudybanner {
+  background-color: #040303;
+  background-image: url("./images/Casestudybanner.png");
+  background-position: 0%;
+  background-repeat: repeat;
+  background-size: cover;
+  border: 2px solid #141414;
+  border-radius: 32px;
+  margin-top: 40px;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding-left: 20px;
+  overflow: hidden;
+}
+
 .menuItems ul li a {
   font-size: 13px;
   color: #e0e0e0;
   font-weight: 400;
+}
+
+.prefooter {
+  background-image: radial-gradient(
+      circle closest-corner at 17% 100%,
+      #003434,
+      #0000
+    ),
+    radial-gradient(circle closest-corner at 80% 0, #003434, #0000),
+    url('./images/upperfooterbg.svg'),
+    url('./images/upperfooterleft.svg');
+  background-position: 0 0, 0 0, 100% 100%, 0 0;
+  background-repeat: repeat, repeat, no-repeat, no-repeat;
+  background-size: auto, auto, auto, auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 /* mobile screen: above 479px */
@@ -182,4 +260,158 @@ html {
     font-size: 16px;
     padding: 15px 10px;
   }
+}
+
+/* big screen: above 1280px */
+@media (min-width: 1280px) {
+  .caseStudybanner {
+    background-position: 0%;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border: 3px solid #141414;
+    border-radius: 32px;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-left: 30px;
+    overflow: hidden;
+  }
+}
+
+/* =====================================
+   Accordion (Base - Mobile First)
+===================================== */
+
+/* Accordion Item */
+.accordion .accordionItem {
+  padding: 20px;
+  border: 1px solid #b6b9ce;
+  border-radius: 9px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.accordion .accordionItem.open {
+  border: 1px solid;
+  border-image: linear-gradient(90deg, #00bcbc, #f8d357) 1;
+}
+
+.accordion .accordionItem.open h6,
+.accordion .accordionItem.open .accordionIcon {
+  color: #00b6b6;
+}
+.accordion .accordionItem .accordionBody span {
+  padding-top: 24px;
+  display: block;
+}
+
+.accordion .accordionItem .accordionHead h6 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 25px;
+}
+/* Desktop spacing */
+@media (min-width: 1024px) {
+  .accordion .accordionItem {
+    padding: 40px;
+  }
+
+  .accordion .accordionItem .accordionHead h6 {
+    font-size: 24px;
+    line-height: 35px;
+  }
+}
+
+/* Icon */
+.accordion .accordionItem .accordionHead .accordionIcon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 26px;
+  transition: transform 0.35s ease;
+}
+
+/* Accordion Body (Mobile Collapse) */
+.accordion .accordionItem .accordionBody {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 400;
+}
+
+/* Active State */
+.accordion .accordionItem.active .accordionBody {
+  max-height: 2000px;
+}
+
+.accordion .accordionItem.open .accordionIcon {
+  transform: rotate(45deg);
+}
+
+@media (min-width: 1024px) {
+  .accordion .accordionItem .accordionBody {
+    font-size: 18px;
+  }
+}
+
+
+
+/* ================================
+   SCROLL PROGRESS BAR
+================================ */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  z-index: 9999;
+  background: linear-gradient(90deg, #4f5ffd, #00f0ff);
+  transition: width 0.1s linear;
+}
+
+/* ================================
+   PARALLAX LAYERS
+================================ */
+
+.parallax-layer {
+  position: relative;
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* ================================
+   REVERSE SCROLL ANIMATION
+================================ */
+
+.reveal,
+.reveal-left,
+.reveal-right,
+.reveal-zoom {
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal {
+  transform: translateY(60px);
+}
+.reveal-left {
+  transform: translateX(-60px);
+}
+.reveal-right {
+  transform: translateX(60px);
+}
+.reveal-zoom {
+  transform: scale(0.85);
+}
+
+.reveal.show,
+.reveal-left.show,
+.reveal-right.show,
+.reveal-zoom.show {
+  opacity: 1;
+  transform: translate(0) scale(1);
 }

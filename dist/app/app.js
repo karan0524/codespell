@@ -390,6 +390,135 @@ class LayoutSwiperAdapter {
 }
 
 
+// =====================================
+// Universal Accordion Controller
+// =====================================
+class MobileAccordion {
+  static initAll() {
+    document.querySelectorAll('[data-accordion]').forEach(acc => {
+      if (!acc._accordionInstance) {
+        acc._accordionInstance = new MobileAccordion(acc);
+      }
+    });
+  }
+
+  constructor(accordion) {
+    this.accordion = accordion;
+    this.item = accordion.dataset.item || '.accordionItem';
+    this.head = accordion.dataset.head || '.accordionHead';
+    this.body = accordion.dataset.body || '.accordionBody';
+    this.activeClass = accordion.dataset.activeClass || 'active';
+
+    this.handleClick = this.handleClick.bind(this);
+    this.bind();
+
+    this.init();
+  }
+
+  init() {
+    this.closeAll();
+    const first = this.accordion.querySelector(this.item);
+    if (first) this.open(first);
+  }
+
+  open(item) {
+    this.closeAll();
+    const body = item.querySelector(this.body);
+    item.classList.add(this.activeClass);
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+
+  close(item) {
+    item.classList.remove(this.activeClass);
+    item.querySelector(this.body).style.maxHeight = 0;
+  }
+
+  closeAll() {
+    this.accordion
+      .querySelectorAll(this.item)
+      .forEach(item => this.close(item));
+  }
+
+  handleClick(e) {
+    const head = e.target.closest(this.head);
+    if (!head || !this.accordion.contains(head)) return;
+
+    const item = head.closest(this.item);
+    item.classList.contains(this.activeClass)
+      ? this.close(item)
+      : this.open(item);
+  }
+
+  bind() {
+    this.accordion.addEventListener('click', this.handleClick);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  MobileAccordion.initAll();
+});
+
+
+let lastScrollTop = 0;
+
+  function scrollProgress() {
+    const scrollTop = $(window).scrollTop();
+    const docHeight = $(document).height() - $(window).height();
+    const progress = (scrollTop / docHeight) * 100;
+
+    $('.scroll-progress').css('width', progress + '%');
+  }
+
+  function advancedParallax() {
+    const scrollTop = $(window).scrollTop();
+
+    $('.parallax-layer').each(function () {
+      const speed = $(this).data('speed') || 0.3;
+      const yPos = -(scrollTop * speed);
+      $(this).css('transform', 'translateY(' + yPos + 'px)');
+    });
+  }
+
+  function revealWithReverse() {
+
+    const windowTop = $(window).scrollTop();
+    const windowBottom = windowTop + $(window).height() * 0.9;
+
+    $('.reveal, .reveal-left, .reveal-right, .reveal-zoom').each(function () {
+
+      const $el = $(this);
+      const elementTop = $el.offset().top;
+      const elementBottom = elementTop + $el.outerHeight();
+
+      // SCROLL DOWN (Reveal)
+      if (windowBottom > elementTop && windowTop < elementBottom) {
+        $el.addClass('show');
+      } 
+      // SCROLL UP (Reverse Animation)
+      else {
+        $el.removeClass('show');
+      }
+
+    });
+  }
+
+  function detectScrollDirection() {
+    const st = $(window).scrollTop();
+    lastScrollTop = st <= 0 ? 0 : st;
+  }
+
+  $(window).on('scroll', function () {
+    scrollProgress();
+    advancedParallax();
+    revealWithReverse();
+    detectScrollDirection();
+  });
+
+  $(window).on('load', function () {
+    scrollProgress();
+    revealWithReverse();
+  });
+
 
   $(document).ready(function () {
     $(".menuToggle").mobileMenuToggle({
@@ -400,8 +529,9 @@ class LayoutSwiperAdapter {
     $(".js-swiper").dynamicSwiper();
     new LayoutSwiperAdapter();
 
-
     $(".videoSection").videoSectionControl({
         threshold: 0.5
       });
+
+      $('#currentYear').text(new Date().getFullYear());
   });
