@@ -110,6 +110,19 @@
       #040303
     );
   }
+
+  .glassShade {
+    @apply border rounded-3xl flex justify-center items-center
+           bg-secondary px-3 py-5;
+    border-color: #00bcbc;
+
+    background-image: radial-gradient(
+      circle closest-corner at 50% -367%,
+      #00bcbc,
+      #00bcbc 69%,
+      #040303
+    );
+  }
 }
 
 /* custom classes */

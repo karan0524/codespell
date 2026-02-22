@@ -1,168 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>AI-Powered Code Completion for Faster SDLC</title</title>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>AI-Powered Code Completion for Faster SDLC</title< /title>
     <meta
       content="CodeSpell.ai is the first AI tool supporting the entire SDLC. Accelerate code completion, enhance productivity, and streamline development with automated testing and DevOps integration."
-      name="description"
-    />
-    <meta
-      content="AI-Powered Code Completion for Faster SDLC"
-      property="og:title"
-    />
+      name="description" />
+    <meta content="AI-Powered Code Completion for Faster SDLC" property="og:title" />
     <meta
       content="CodeSpell.ai is the first AI tool supporting the entire SDLC. Accelerate code completion, enhance productivity, and streamline development with automated testing and DevOps integration."
-      property="og:description"
-    />
-    <meta
-      content="AI-Powered Code Completion for Faster SDLC"
-      property="twitter:title"
-    />
+      property="og:description" />
+    <meta content="AI-Powered Code Completion for Faster SDLC" property="twitter:title" />
     <meta
       content="CodeSpell.ai is the first AI tool supporting the entire SDLC. Accelerate code completion, enhance productivity, and streamline development with automated testing and DevOps integration."
-      property="twitter:description"
-    />
+      property="twitter:description" />
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="./dist/images/favicon/favicon-96x96.png"
-      sizes="96x96"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="./dist/images/favicon/favicon.svg"
-    />
+    <link rel="icon" type="image/png" href="./dist/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./dist/images/favicon/favicon.svg" />
     <link rel="shortcut icon" href="./dist/images/favicon/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./dist/images/favicon/apple-touch-icon.png"
-    />
+    <link rel="apple-touch-icon" sizes="180x180" href="./dist/images/favicon/apple-touch-icon.png" />
 
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <link href="./dist/output.css" rel="stylesheet" />
-  </head>
-  <body class="font-Figtree bg-bgdark">
-    <header class="py-2 lg:py-6 glass fixed top-0 left-0 right-0">
-      <div class="container">
-        <div
-          class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-4 lg:gap-5"
-        >
-          <a href="./index.html" class="col-span-2 self-center">
-            <img src="./dist/images/logo.svg" alt="codespell.ai" />
-          </a>
-          <div class="col-span-2 flex-end-center lg:hidden">
-            <button class="bg-primary grid place-items-center p-2 rounded-lg menuToggle">
-              <span class="material-symbols-outlined text-white"> menu </span>
-            </button>
-          </div>
-          <nav class="col-span-4 md:col-span-6 lg:col-span-10 menuItems hidden lg:block">
-            <ul
-              class="flex-start-start lg:flex-end-center flex-col lg:flex-row gap-1 lg:gap-3"
-            >
-              <li>
-                <a href="#" class="capitalize"> Why CodeSpell ? </a>
-              </li>
-              <li>
-                <a href="#" class="capitalize"> Use case </a>
-              </li>
-              <li>
-                <a href="#" class="capitalize"> Enterprise </a>
-              </li>
-              <li>
-                <a href="#" class="capitalize"> Pricing </a>
-              </li>
-              <li>
-                <a href="#" class="capitalize"> Resources </a>
-              </li>
-              <li>
-                <a href="#" class="capitalize"> Login </a>
-              </li>
+</head>
 
-              <li>
-                <a href="#" class="primaryBtn">
-                  <span> Book a demo </span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+<body class="font-Figtree bg-bgdark">
+  <header class="py-2 lg:py-6 glass fixed top-0 left-0 right-0 z-30">
+    <div class="container">
+      <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-4 lg:gap-5">
+        <a href="./index.html" class="col-span-2 self-center">
+          <img src="./dist/images/logo.svg" alt="codespell.ai" />
+        </a>
+        <div class="col-span-2 flex-end-center lg:hidden">
+          <button class="bg-primary grid place-items-center p-2 rounded-lg menuToggle">
+            <span class="material-symbols-outlined text-white"> menu </span>
+          </button>
         </div>
-      </div>
-    </header>
+        <nav class="col-span-4 md:col-span-6 lg:col-span-10 menuItems hidden lg:block">
+          <ul class="flex-start-start lg:flex-end-center flex-col lg:flex-row gap-1 lg:gap-3">
+            <li>
+              <a href="#" class="capitalize"> Why CodeSpell ? </a>
+            </li>
+            <li>
+              <a href="#" class="capitalize"> Use case </a>
+            </li>
+            <li>
+              <a href="#" class="capitalize"> Enterprise </a>
+            </li>
+            <li>
+              <a href="#" class="capitalize"> Pricing </a>
+            </li>
+            <li>
+              <a href="#" class="capitalize"> Resources </a>
+            </li>
+            <li>
+              <a href="#" class="capitalize"> Login </a>
+            </li>
 
-    <main>
-      <section class="hmBanner">
-        <div class="container">
-          <div
-            class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-4 lg:gap-5"
-          >
-            <div
-              class="col-span-4 md:col-span-6 lg:col-span-6 text-center lg:text-left text-shade100"
-            >
-              <h1
-                class="text-56 my-2 lg:text-50 xl:text-64 font-bold tracking-tight02 leading-67 lg:mt-24 max-w-screen-sm w-full"
-              >
-                Your SDLC <span class="gradient-text">Co-Pilot</span>
-              </h1>
-              <p
-                class="text-sm sm:text-base md:text-lg lg:text-base leading-normal font-medium mb-2"
-              >
-                CodeSpell uses AI to generate code, document it, fix errors,
-                build APIs, automate tests, and set up infrastructure - right
-                inside your IDE
-              </p>
-
-              <a href="#" class="primaryBtn mt-10 mx-auto lg:mx-[unset]">
+            <li>
+              <a href="#" class="primaryBtn">
                 <span> Book a demo </span>
               </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hmBanner">
+      <div class="container">
+        <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-4 lg:gap-5">
+          <div class="col-span-4 md:col-span-6 lg:col-span-6 text-center lg:text-left text-shade100">
+            <h1
+              class="text-56 my-2 lg:text-50 xl:text-64 font-bold tracking-tight02 leading-67 lg:mt-24 max-w-screen-sm w-full">
+              Your SDLC <span class="gradient-text">Co-Pilot</span>
+            </h1>
+            <p class="text-sm sm:text-base md:text-lg lg:text-base leading-normal font-medium mb-2">
+              CodeSpell uses AI to generate code, document it, fix errors,
+              build APIs, automate tests, and set up infrastructure - right
+              inside your IDE
+            </p>
+
+            <a href="#" class="primaryBtn mt-10 mx-auto lg:mx-[unset]">
+              <span> Book a demo </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pt-0 lg:py-10 videoSection">
+      <div class="container">
+        <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12">
+          <div class="col-span-4 md:col-span-6 lg:col-span-8 lg:col-start-3">
+            <div class="relative videoWrapper cursor-pointer">
+              <video class="w-full rounded-lg" src="./dist/video/codespell.mp4" preload="metadata"></video>
+
+              <!-- Play Button -->
+              <button class="absolute inset-0 flex items-center justify-center playBtn">
+                <span
+                  class="material-symbols-outlined bg-[#4f5ffd] text-white rounded-full size-11 text-3xl grid place-items-center">
+                  play_arrow
+                </span>
+              </button>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="pt-0 lg:py-10 videoSection ">
-        <div class="container">
-          <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12">
-            <div class="col-span-4 md:col-span-6 lg:col-span-8 lg:col-start-3">
-              
-              <div class="relative videoWrapper cursor-pointer">
-                <video 
-                  class="w-full rounded-lg"
-                  src="./dist/video/codespell.mp4"
-                  preload="metadata"
-                ></video>
-      
-                <!-- Play Button -->
-                <button 
-                  class="absolute inset-0 flex items-center justify-center playBtn">
-                  <span class="material-symbols-outlined bg-[#4f5ffd] text-white rounded-full size-11 text-3xl grid place-items-center">
-                    play_arrow
-                    </span>
-                </button>
+    <section class="bg-white/5 py-10 lg:pt-17">
+      <div class="container">
+        <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-4 lg:gap-6 text-shade100">
+          <h2
+            class="text-34 md:text-3xl lg:text-32 xl:text-4xl font-medium tracking-tight02 leading-normal col-span-4 md:col-span-6 lg:col-span-5">
+            Not Just an <span class="gradient-text">AI Coding Assistant</span>
+          </h2>
+
+          <p class="col-span-4 md:col-span-6 lg:col-start-7 leading-normal font-normal text-base md:text-lg lg:text-xl">
+            Bring structure, speed, and consistency across your SDLC. Enable
+            your teams to collaborate more effectively, deploy with
+            confidence, and adapt to change without starting from scratch.
+          </p>
+        </div>
+
+        <div class="lg:max-w-4xl w-full mx-auto mt-8">
+          <div class="swiper-grid grid grid-cols-12 gap-4 lg:gap-5" data-swiper-id="pointsSlider" data-items="2"
+            data-items-mobile="2" data-items-tab="2" data-items-desktop="3" data-loop="false" data-center="false"
+            data-space="24" data-nav="false" data-nav-mobile="false" data-nav-tab="false" data-nav-desktop="false"
+            data-dots="false" data-dots-mobile="false" data-dots-tab="false" data-dots-desktop="false"
+            data-autoplay="true" data-autoplay-timeout="4000" data-autoplay-hover-pause="false" data-speed="800">
+            <div class="grid place-items-center glassShade col-span-2">
+              <span class="text-primary material-symbols-outlined">
+                book_6
+              </span>
+              <p class="text-base text-center lg:text-left leading-normal mt-2 text-shade100 capitalize">
+                requirements
+              </p>
+            </div>
+            <div class="grid place-items-center glassShade col-span-2">
+              <span class="text-primary material-symbols-outlined">
+                design_services
+              </span>
+              <p class="text-sm font-normal leading-normal mt-1 text-shade100 capitalize">
+                design
+              </p>
+            </div>
+
+            <div class="grid place-items-center glassShade col-span-2">
+              <span class="text-primary material-symbols-outlined">
+                person
+              </span>
+              <p class="text-sm font-normal leading-normal mt-1 text-shade100 capitalize">
+                user stories
+              </p>
+            </div>
+            <div class="grid place-items-center glassShade col-span-2">
+              <span class="text-primary material-symbols-outlined">
+                code_blocks
+              </span>
+              <p class="text-sm font-normal leading-normal mt-1 text-shade100 capitalize">
+                development
+              </p>
+            </div>
+
+            <div class="grid place-items-center glassShade col-span-2">
+              <span class="text-primary material-symbols-outlined">
+                bug_report
+              </span>
+              <p class="text-sm font-normal leading-normal mt-1 text-shade100 capitalize">
+                testing
+              </p>
+            </div>
+
+            <div class="grid place-items-center glassShade col-span-2">
+              <span class="text-primary material-symbols-outlined">
+                deployed_code
+              </span>
+              <p class="text-sm font-normal leading-normal mt-1 text-shade100 capitalize">
+                deployment
+              </p>
+            </div>
+
+            <div class="swiper-pagination" data-pagination-id="pointsSlider"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-4 gap-y-8 lg:gap-6 text-shade100">
+          <div class="col-span-4 md:col-span-6 order-2 lg:order-1">
+            <img src="./dist/images/designtocode.png" alt="design to code" />
+          </div>
+          <div class="col-span-4 md:col-span-6 order-1 lg:order-2">
+            <h2 class="text-34 md:text-3xl lg:text-32 xl:text-4xl font-medium tracking-tight02 leading-normal mb-5">
+              Build Smarter With
+              <span class="gradient-text">Design to Code </span>
+            </h2>
+
+            <p class="leading-normal font-normal text-base md:text-lg lg:text-xl mb-2">
+              Auto-generate scaffolding, APIs, infrastructure scripts, and
+              even frontend code directly from your Figma designs, tailored to
+              your stack. No more repetitive setup, just structured,
+              production-ready code inside your IDE.
+            </p>
+
+            <div class="mt-8">
+              <div class="swiper-grid grid grid-cols-4 gap-4 lg:gap-5" data-swiper-id="designCodeSlider" data-items="2"
+                data-items-mobile="2" data-items-tab="2" data-items-desktop="3" data-loop="false" data-center="false"
+                data-space="24" data-nav="false" data-nav-mobile="false" data-nav-tab="false" data-nav-desktop="false"
+                data-dots="false" data-dots-mobile="false" data-dots-tab="false" data-dots-desktop="false"
+                data-autoplay="true" data-autoplay-timeout="4000" data-autoplay-hover-pause="false" data-speed="800">
+                <div class="grid place-items-center col-span-2">
+                  <span class="text-primary material-symbols-outlined">
+                    rocket_launch
+                  </span>
+                  <p class="text-base text-center lg:text-left leading-normal mt-2 text-shade100 capitalize">
+                    Figma to Production-Ready Code
+                  </p>
+                </div>
+                <div class="grid place-items-center col-span-2">
+                  <span class="text-primary material-symbols-outlined">
+                    code
+                  </span>
+                  <p class="text-base text-center lg:text-left leading-normal mt-2 text-shade100 capitalize">
+                    Fastrack API Development
+                  </p>
+                </div>
+
+                <div class="grid place-items-center col-span-2">
+                  <span class="text-primary material-symbols-outlined">
+                    folder_code
+                  </span>
+                  <p class="text-base text-center lg:text-left leading-normal mt-2 text-shade100 capitalize">
+                    ⁠Automated API Test Script Generation
+                  </p>
+                </div>
+                <div class="grid place-items-center col-span-2">
+                  <span class="text-primary material-symbols-outlined">
+                    folder_data
+                  </span>
+                  </span>
+                  <p class="text-base text-center lg:text-left leading-normal mt-2 text-shade100 capitalize">
+                    Simplify Infrastructure Script Development
+                  </p>
+                </div>
+
+
+
+                <div class="swiper-pagination" data-pagination-id="designCodeSlider"></div>
               </div>
-      
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  </main>
 
-      <section class="pb-[900px]"></section>
-    </main>
+  <!-- scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script src="./dist/app/app.js"></script>
+</body>
 
-    <!-- scripts -->
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
-    <script src="./dist/app/app.js"></script>
-  </body>
 </html>
