@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=STIX+Two+Text:ital@0;1&family=Staatliches&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .flex-center-center {
+    @apply flex flex-wrap justify-center items-center;
+  }
+
+  .flex-start-center {
+    @apply flex flex-wrap justify-start items-center;
+  }
+
+  .flex-end-center {
+    @apply flex flex-wrap justify-end items-center;
+  }
+
+  .flex-between-center {
+    @apply flex flex-wrap justify-between items-center;
+  }
+
+  .flex-center-start {
+    @apply flex flex-wrap justify-center items-start;
+  }
+
+  .flex-center-end {
+    @apply flex flex-wrap justify-center items-end;
+  }
+
+  .flex-between-start {
+    @apply flex flex-wrap justify-between items-start;
+  }
+
+  .flex-between-end {
+    @apply flex flex-wrap justify-between items-end;
+  }
+
+  .flex-start-start {
+    @apply flex flex-wrap justify-start items-start;
+  }
+
+  /* Bottom Full Width */
+  .abs-bottom-left-right {
+    @apply absolute bottom-0 left-0 right-0;
+  }
+
+  /* Top Full Width */
+  .abs-top-left-right {
+    @apply absolute top-0 left-0 right-0;
+  }
+
+  /* Top Left */
+  .abs-top-left {
+    @apply absolute top-0 left-0;
+  }
+
+  /* Top Right */
+  .abs-top-right {
+    @apply absolute top-0 right-0;
+  }
+
+  /* Bottom Left */
+  .abs-bottom-left {
+    @apply absolute bottom-0 left-0;
+  }
+
+  /* Bottom Right */
+  .abs-bottom-right {
+    @apply absolute bottom-0 right-0;
+  }
+
+  /* Left Full Height */
+  .abs-top-bottom-left {
+    @apply absolute top-0 bottom-0 left-0;
+  }
+
+  /* Right Full Height */
+  .abs-top-bottom-right {
+    @apply absolute top-0 bottom-0 right-0;
+  }
+
+  /* Full Cover */
+  .abs-top-bottom-left-right {
+    @apply absolute inset-0;
+  }
+
+  .glass {
+    @apply backdrop-blur-[30px] bg-transparent;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(38.74deg, #f8d357 50%, #00b6b6 80%);
+  }
+
+  .primaryBtn {
+    @apply border rounded-[30px] flex justify-center items-center
+    w-[127px] lg:w-[143px]
+    h-8 lg:h-[35px] max-h-[44px]
+           bg-secondary;
+
+    border-color: #00bcbc;
+
+    background-image: radial-gradient(
+      circle closest-corner at 50% -367%,
+      #00bcbc,
+      #00bcbc 69%,
+      #040303
+    );
+  }
+}
+
+/* custom classes */
+
+html {
+  background-attachment: scroll !important;
+}
+
+.hmBanner {
+  background-image: url("./images/homebanner.png"),
+    radial-gradient(circle farthest-side at 0% 16%, #1b3434 1%, #040303 52%);
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+  background-clip: border-box;
+  width: auto;
+  height: auto;
+  margin-bottom: 0;
+  padding-top: 100px;
+  padding-bottom: 90px;
+}
+
+.menuItems ul li a {
+  font-size: 13px;
+  color: #e0e0e0;
+  font-weight: 400;
+}
+
+/* mobile screen: above 479px */
+@media (min-width: 479px) {
+  .hmBanner {
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto;
+  }
+}
+
+/* tab screen: above 767px */
+@media (min-width: 767px) {
+  .hmBanner {
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto;
+  }
+}
+
+/* big screen: above 991px */
+@media (min-width: 991px) {
+  .hmBanner {
+    background-position: 100% 0, 0 0;
+    background-repeat: no-repeat, repeat;
+    background-size: cover, auto;
+    padding-bottom: 140px;
+  }
+
+  .menuItems ul li a {
+    font-size: 16px;
+    padding: 15px 10px;
+  }
+}
